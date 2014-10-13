@@ -1,0 +1,13 @@
+*.gz
+*.fastq
+*.err
+*.out
+/og*
+/bc*
+/ngsutils
+/outs
+/errors
+/pre_alignment
+/alignments
+/Ref_gens
+
