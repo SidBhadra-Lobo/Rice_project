@@ -31,7 +31,7 @@ for file in $(ls /home/sbhadral/Projects/Rice_project/og_allo175/*.gz);
 
 do
 
-gunzip -d -k -c -f < $file > /home/sbhadral/Projects/Rice_project/pre_alignment/
+gunzip -d -k -c -f < $file > /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq
 
 file1 = $(ls /home/sbhadral/Projects/Rice_project/pre_alignment/ | sed -e 's/-R1\.fastq/-R1/g')
 file2 = $(ls /home/sbhadral/Projects/Rice_project/pre_alignment/ | sed -e 's/-R2\.fastq/-R2/g')
