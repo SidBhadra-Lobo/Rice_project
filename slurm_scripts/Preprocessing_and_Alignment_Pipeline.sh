@@ -31,10 +31,10 @@ for file in $(ls /home/sbhadral/Projects/Rice_project/og_allo175/*.gz);
 
 do
 
-gunzip -d -k -c -f < $file > /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq
+gunzip -d -k -c -f < $file > /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq ###sequtils <(gunzip file.gz) another option
 
-file1 = $(ls /home/sbhadral/Projects/Rice_project/pre_alignment/ | sed -e 's/-R1\.fastq/-R1/g')
-file2 = $(ls /home/sbhadral/Projects/Rice_project/pre_alignment/ | sed -e 's/-R2\.fastq/-R2/g')
+file1 = $(ls /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq | sed -e 's/-R1\.fastq/-R1/g')
+file2 = $(ls /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq | sed -e 's/-R2\.fastq/-R2/g')
 
 /home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils properpairs -z /home/sbhadral/Projects/Rice_project/og_allo175/$file1 /home/sbhadral/Projects/Rice_project/og_allo175/$file2 
 
