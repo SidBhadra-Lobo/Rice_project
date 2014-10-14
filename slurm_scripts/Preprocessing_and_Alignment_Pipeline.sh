@@ -27,18 +27,26 @@ set -u
 #echo $file1
 #echo $file2
 
-for file in $(ls /home/sbhadral/Projects/Rice_project/og_allo175/*.gz);
+cd /home/sbhadral/Projects/Rice_project/og_allo175/
+
+for file1 in $(ls /home/sbhadral/Projects/Rice_project/og_allo175/*R1*.gz);
 
 do
 
-gunzip -d -k -c -f < $file > /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq ###sequtils <(gunzip file.gz) another option
+echo $file1
 
-file1 = $(ls /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq | sed -e 's/-R1\.fastq/-R1/g')
-file2 = $(ls /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq | sed -e 's/-R2\.fastq/-R2/g')
+#gunzip -d -k -c -f < $file > /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq ###sequtils <(gunzip file.gz) another option
 
-/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils properpairs -z /home/sbhadral/Projects/Rice_project/og_allo175/$file1 /home/sbhadral/Projects/Rice_project/og_allo175/$file2 
+#file1=$(echo $file | sed -e 's/-R1\.fastq.gz/-R1/g')
+file2=$(echo $file1 | sed -e 's/-R1\.fastq.gz/-R2.fastq.gz/g')
 
-	 /home/sbhadral/Projects/Rice_project/pre_alignment/output1 /home/sbhadral/Projects/Rice_project/pre_alignment/output2 ;
+echo $file2
+
+/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils properpairs -z <(gunzip -dkcf $file1) <(gunzip -dkcf $file2) 
+
+#/home/sbhadral/Projects/Rice_project/og_allo175/$file1 /home/sbhadral/Projects/Rice_project/og_allo175/$file2 
+
+	 /home/sbhadral/Projects/Rice_project/pre_alignment/$file1.paired /home/sbhadral/Projects/Rice_project/pre_alignment/$file2.paired ;
 
 done
 
