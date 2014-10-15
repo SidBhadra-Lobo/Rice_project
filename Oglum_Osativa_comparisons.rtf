@@ -1,0 +1,371 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;\red133\green0\blue175;\red0\green45\blue153;\red255\green39\blue18;
+\red164\green8\blue0;\red217\green11\blue0;\red46\green111\blue253;\red102\green177\blue50;\red0\green61\blue204;
+\red59\green0\blue164;\red0\green145\blue206;\red0\green68\blue254;\red168\green24\blue75;\red255\green83\blue8;
+\red85\green142\blue40;\red74\green0\blue230;}
+\margl1440\margr1440\vieww14920\viewh16220\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs72 \cf2 RICE PROJECT
+\fs48 \cf0 \
+\
+O. glumaepatula VS O. sativa Reference Genomes \
+\
+{\field{\*\fldinst{HYPERLINK "ftp://ftp.ensemblgenomes.org/pub/plants/release-23/fasta/oryza_sativa"}}{\fldrslt 
+\fs32 ftp://ftp.ensemblgenomes.org/pub/plants/release-23/fasta/oryza_sativa}}
+\fs32 \
+\
+\
+{\field{\*\fldinst{HYPERLINK "ftp://ftp.ensemblgenomes.org/pub/plants/release-23/fasta/oryza_glumaepatula"}}{\fldrslt ftp://ftp.ensemblgenomes.org/pub/plants/release-23/fasta/oryza_glumaepatula}}
+\fs48 \
+
+\fs24 \
+\
+
+\fs32 For Rice Genomes from Lab Server/DROBO:
+\fs24 \
+\
+/Volumes/DROBO_DATA/sequence/rice_genomes_fuchs/\
+\
+Using rsync to move files from lab server\'92s DROBO to the cluster while on the cluster: (won\'92t work from the lab server to cluster since rsa key from farm is not saved on there)\
+\
+rsync -Pav rilab@169.237.206.3:/Volumes/DROBO_DATA/sequence/rice_genomes_fuchs/sample*/*.gz ./og*/\
+\
+
+\fs32 If the file transfer keeps dropping:
+\fs24 \
+\
+use screen\
+	$ screen \
+\pard\pardeftab720\sl360\sa320
+
+\b \cf0 	Attaching and Detaching
+\b0 \
+		Once you have screen running, switch to any of the running windows and type 
+\f1 Control-a d
+\f0 . this will detach screen from this terminal. 	Now, go to a different machine, open a shell, ssh to the machine running screen (the one you just detached from), and type: 
+\f1 % screen -r
+\f0\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs36 \cf0 \
+Chromosomal Comparison (to see if the assembly is ok, relatively)\
+\
+\
+Oryza_glumaepatula.ALNU02000000.23.dna.		Oryza_sativa.IRGSP-1.0.23.dna.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs28 \cf3 \
+Chromosome Number:\
+\
+Line Count:\
+Character Count:\
+\'93N\'94 Count:\
+%N to total Character Count:
+\fs24 \cf0 \
+\
+chromosome.1								chromosome.1               
+\fs32 \cf4 Differences\cf5 :
+\fs24 \cf0 \
+\
+775,500									721,183	                  54,317 lines\
+47,305,442									43,992,107	                  3,313,335 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf6 8,499,004									9,093		                  8,489,911 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 17.9662%									0.020669%                     17.9455%\
+\
+chromosome.2								chromosome.2\
+\
+633,990									598,955	                  35,035 lines\
+38,673,359									36,536,206                      2,137,153  bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf6 6,796,067									5,440		                  6,790,627 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 17.5729%									0.014848%	                  17.5581%\
+chromosome.3								chromosome.3\
+\
+626,581									606,897	                  19,684 lines\
+38,221,420									37,020,717                      1,200,703 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 6,240,479									9,821                               6,230,658 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 16.3271%									0.026528%	                  16.3005%\
+\
+chromosome.4								chromosome.4\
+\
+548,072									591,712	                 -43,641 lines\
+33,432,288									36,094,407                     -2,662,119 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 6,928,437									34,221                             6,894,216 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 20.7237%									0.094809%	                  20.62890%\
+\
+chromosome.5								chromosome.5\
+\
+507,156									499,308	                   7,838 lines\
+30,936,474									30,457,743                       478,731 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 6,041,192									6,847		                   6,034,345 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 19.5277%									0.022480%	                   19.5052%\
+\
+chromosome.6								chromosome.6\
+\
+525,804									520,814	                   4,990 lines\
+32,073,992									31,769,602                       304,390 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 6,378,583									22,456	                   6,356,127 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 19.8871%									0.070684%                      19.8164%\
+\
+chromosome.7								chromosome.7\
+\
+472,515									494,961	                 -22,446 lines\
+28,823,374									30,192,583                     -1,369,209 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 6,059,675									4,270		                  6,055,405 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 21.0235%									0.014142%	                  21.0094%\
+\
+chromosome.8								chromosome.8\
+\
+453,097									474,051	                 -20,954 lines\
+27,638,868									28,917,074                     -1,278,206 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 5,380,623									3,134		                  5,377,489 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 19.4676%									0.010848%	                  19.4567%\
+\
+chromosome.9								chromosome.9\
+\
+391,502									383,546	                   7,956 lines\
+23,881,587									23,396,267                       485,320 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 4,732,498									9,659		                   4,712,398 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 19.8165%									0.041284%	                   19.7752%\
+\
+chromosome.10								chromosome.10\
+\
+382,794									386,789	                 -3,995 lines\
+23,350,429									23,594,077                     -243,648 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 4,944,109									19,711		                  4,924,398 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 21.1735%									0.083531%	                  21.0899%\
+\
+chromosome.11								chromosome.11\
+\
+451,639									483,686	                -32,047 lines\
+27,549,945									29,504,793                    -1,954,848\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 6,169,233									20,564	                 596,359 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 22.3929%									0.069697%	                 22.3232%\
+\
+chromosome.12								chromosome.12\
+\
+445,697									458,865	               -13,168 lines\
+27,187,463									27,990,722                   -803,259 bp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 6,163,316									7,947	                           6,155,369 N\'92s\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 22.6697%									0.028391%	                22.6686%\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs36 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf7 Conclusions: 
+\fs32 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+Assembly and sequencing of O. glumaepatula is not the best quality reference genome. O. sativa is of good quality (2nd best ref gen out there). Since there are so many more N\'92s in O. glum, it will be a problem for alignments and SNP calling.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf7 Commands Line input:\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs36 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs28 \cf0 	Headerless Character Count:\
+\
+		less Oryza_glumaepatula.ALNU02000000.23.dna.chromosome.*.fa | sed 's/^>.*//g' | wc -c\
+\
+	Headerless Line Count:\
+\
+		same as above, but wc -l instead.\
+	\
+	N Count:  less Oryza_glumaepatula.ALNU02000000.23.dna.chromosome.5.fa | grep "N" | wc -c
+\fs36 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs24 \cf0 \
+\
+Side Notes: \
+	There are 60 characters per line in a fasta.\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs72 \cf0 rsync Issues:
+\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs36 \cf0 File Sizes are inconsitent between rilab server and farm: \cf8 RESOLVED\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs36 \cf0 Solution:
+\fs24  
+\fs28 Use cksum to check the files sizes to the byte level.  Seems that the difference in presented filesize is caused by rounding, the actual number of bytes is the same per file (at least so far, still waiting on rilab server to spit out all of the cksums).
+\fs24 \
+[sbhadral@
+\fs48 \cf9 farm
+\fs24 \cf0  Rice_project 07:43 PM]$ls -lha */*.gz\
+ \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf6 4.6G\cf10  \cf0 Aug  8  2012 og_allo175/og175-R1.fastq.gz
+\b0 \
+4.5G Aug  8  2012 og_allo175/og175-R2.fastq.gz\
+\
+
+\b \cf4 5.0G\cf0  Aug  9  2012 og_allo176/og176-R1.fastq.gz
+\b0 \
+4.9G Aug  9  2012 og_allo176/og176-R2.fastq.gz\
+\
+
+\b \cf6 4.0G\cf0  Aug  9  2012 og_allo177/og177-R1.fastq.gz
+\b0 \
+3.9G Aug  9  2012 og_allo177/og177-R2.fastq.gz\
+\
+
+\b \cf6 4.9G\cf0  Aug  9  2012 og_allo179/og179-R1.fastq.gz
+\b0 \
+4.8G Aug  9  2012 og_allo179/og179-R2.fastq.gz\
+\
+4.5G Aug  8  2012 og_sym273/og273-R1.fastq.gz\
+
+\b \cf6 4.6G\cf0  Aug  8  2012 og_sym273/og273-R2.fastq.gz
+\b0 \
+\
+4.6G Aug  8  2012 og_sym275/og275-R1.fastq.gz\
+4.6G Aug  8  2012 og_sym275/og275-R2.fastq.gz\
+\
+5.2G Aug  8  2012 og_sym276/og276-R1.fastq.gz\
+5.2G Aug  8  2012 og_sym276/og276-R2.fastq.gz\
+\
+
+\b \cf6 4.9G\cf0  Aug  8  2012 og_sym278/og278-R1.fastq.gz
+\b0 \
+4.8G Aug  8  2012 og_sym278/og278-R2.fastq.gz\
+\
+91M Oct  6 13:55 Ref_gens/Oryza_glumaepatula.ALNU02000000.23.dna.genome.fa.gz\
+110M Oct  6 13:55 Ref_gens/Oryza_sativa.IRGSP-1.0.23.dna.genome.fa.gz\
+\
+rossibarra:rice_genomes_fuchs 
+\fs48 \cf9 rilab
+\fs24 \cf0 $ ls -lha sample*/*.gz\
+\
+4.5G Aug  8  2012 sample2b/og175-R1.fastq.gz\
+4.5G Aug  8  2012 sample2b/og175-R2.fastq.gz\
+\
+4.9G Aug  9  2012 sample2c/og176-R1.fastq.gz\
+4.9G Aug  9  2012 sample2c/og176-R2.fastq.gz\
+\
+3.9G Aug  9  2012 sample3a/og177-R1.fastq.gz\
+3.9G Aug  9  2012 sample3a/og177-R2.fastq.gz\
+\
+4.9G Aug  9  2012 sample3b/og179-R1.fastq.gz\
+4.8G Aug  9  2012 sample3b/og179-R2.fastq.gz\
+\
+4.5G Aug  8  2012 sample1a/og273-R1.fastq.gz\
+4.5G Aug  8  2012 sample1a/og273-R2.fastq.gz\
+\
+4.5G Aug  8  2012 sample1b/og275-R1.fastq.gz\
+4.5G Aug  8  2012 sample1b/og275-R2.fastq.gz\
+\
+5.2G Aug  8  2012 sample1c/og276-R1.fastq.gz\
+5.2G Aug  8  2012 sample1c/og276-R2.fastq.gz\
+\
+4.9G Aug  8  2012 sample2a/og278-R1.fastq.gz\
+4.8G Aug  8  2012 sample2a/og278-R2.fastq.gz\
+\
+4.1G Aug  9  2012 sample3c/bc1-R1.fastq.gz\
+4.1G Aug  9  2012 sample3c/bc1-R2.fastq.gz\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs48 \cf0 Checksums of files:
+\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Farm
+\b0 :\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf11 2612366951 4875576546 og175-R1.fastq.gz\
+1900169335 4793226491 og175-R2.fastq.gz\cf0 \
+\
+\cf12 349286048 5313114780 og176-R1.fastq.gz\
+87770239 5231290840 og176-R2.fastq.gz\cf0 \
+\
+\cf10 2171615954 4196821584 og177-R1.fastq.gz\
+3476982879 4137416147 og177-R2.fastq.gz\cf0 \
+\
+\cf2 2881832097 5238991667 og179-R1.fastq.gz\
+2994313812 5146456388 og179-R2.fastq.gz\cf0 \
+\
+\cf13 1837915936 4827474490 og273-R1.fastq.gz\
+2050826351 4832312558 og273-R2.fastq.gz\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 3039360691 4873590415 og275-R1.fastq.gz\
+2433910751 4876924696 og275-R2.fastq.gz\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf14 3084074059 5554217283 og276-R1.fastq.gz\
+3068421077 5558664575 og276-R2.fastq.gz\cf0 \
+\
+\cf15 3849082637 5209329746 og278-R1.fastq.gz\
+1581569058 5124687254 og278-R2.fastq.gz\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Rilab Server: 17930.pts-40.farm\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b0 \cf11 3659568634 4875576546 sample2b/og175-R1.fastq.gz\
+4069828152 4793226491 sample2b/og175-R2.fastq.gz\
+\
+\cf12 3620864025 5313114780 sample2c/og176-R1.fastq.gz\
+2607342879 5231290840 sample2c/og176-R2.fastq.gz\
+\cf13 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf16 q935259744 4196821584 sample3a/og177-R1.fastq.gz\
+2108124824 4137416147 sample3a/og177-R2.fastq.gz\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf13 \
+1837915936 4827474490 sample1a/og273-R1.fastq.gz\
+2050826351 4832312558 sample1a/og273-R2.fastq.gz\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf4 3086076751 4873590415 sample1b/og275-R1.fastq.gz\
+3726511446 4876924696 sample1b/og275-R2.fastq.gz\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf14 2346678796 5554217283 sample1c/og276-R1.fastq.gz\
+3702912263 5558664575 sample1c/og276-R2.fastq.gz\
+\
+\cf15 643379533 5209329746 sample2a/og278-R1.fastq.gz\
+3771686772 5124687254 sample2a/og278-R2.fastq.gz}
