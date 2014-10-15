@@ -29,24 +29,47 @@ set -u
 
 cd /home/sbhadral/Projects/Rice_project/og_allo175/
 
-for file1 in $(ls /home/sbhadral/Projects/Rice_project/og_allo175/*R1*.gz);
+for file1 in $(ls *R1*.gz);
 
 do
 
-echo $file1
+file2=$(echo $file1 | sed -e 's/-R1\.fastq.gz/-R2.fastq.gz/g')
+file3=$(echo $file1 | sed -e 's/-R1\.fastq.gz//g')
 
-#gunzip -d -k -c -f < $file > /home/sbhadral/Projects/Rice_project/pre_alignment/*.fastq ###sequtils <(gunzip file.gz) another option
+echo $file1
+echo $file2
+echo $file3
+
+/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils sort -T /home/sbhadral/Projects/Rice_project/pre_alignment <(gunzip -dkcf $file1) <(gunzip -dkcf $file2) > /home/sbhadral/Projects/Rice_project/pre_alignment/$file1.sort /home/sbhadral/Projects/Rice_project/pre_alignment/$file2.sort
+
+echo $file1.sort
+echo $file2.sort
+
+cd /home/sbhadral/Projects/Rice_project/pre_alignment/
+
+/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils merge $file1.sort $file2.sort > /home/sbhadral/Projects/Rice_project/pre_alignment/check.$file3.merge ;
+
+echo check.$file3.merge
+
+#gunzip -d -k -c -f < $file1 > ../pre_alignment/
+
+#gunzip -d -k -c -f < $file2 > ../pre_alignment/
+
+ ###sequtils <(gunzip file.gz) another option
 
 #file1=$(echo $file | sed -e 's/-R1\.fastq.gz/-R1/g')
-file2=$(echo $file1 | sed -e 's/-R1\.fastq.gz/-R2.fastq.gz/g')
 
-echo $file2
+#/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils properpairs -z /home/sbhadral/Projects/Rice_project/pre_alignment/$file1 /home/sbhadral/Projects/Rice_project/pre_alignment/$file2
+#
+#			/home/sbhadral/Projects/Rice_project/pre_alignment/$file1.paired /home/sbhadral/Projects/Rice_project/pre_alignment/$file2.paired ;
 
-/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils properpairs -z <(gunzip -dkcf $file1) <(gunzip -dkcf $file2) 
+
+#/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils properpairs -z <(gunzip -dkcf $file1) <(gunzip -dkcf $file2) 
 
 #/home/sbhadral/Projects/Rice_project/og_allo175/$file1 /home/sbhadral/Projects/Rice_project/og_allo175/$file2 
 
-	 /home/sbhadral/Projects/Rice_project/pre_alignment/$file1.paired /home/sbhadral/Projects/Rice_project/pre_alignment/$file2.paired ;
+# /home/sbhadral/Projects/Rice_project/pre_alignment/$file1.paired /home/sbhadral/Projects/Rice_project/pre_alignment/$file2.paired ;
+
 
 done
 
