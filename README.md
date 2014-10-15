@@ -28,23 +28,22 @@ On a per chromosome basis between reference genomes on the following criteria in
 
 Chromosome Numbers: 1-14
 
-Line Count, Character Count, “N” Count, %N to total Character Count
+Line Count, Character Count, “N” Count, %N of total Character Count
 
 `Command Line Input:`
 
-Headerless Character Count:
+*Headerless Character Count:*
 
 		less Oryza_glumaepatula.ALNU02000000.23.dna.chromosome.*.fa | sed 's/^>.*//g' | wc -c
 
 
-Headerless Line Count:
+*Headerless Line Count:*
 
 		same as above, but wc -l instead.
 	
-N Count:
+*N Count:*
 
 		less Oryza_glumaepatula.ALNU02000000.23.dna.chromosome.5.fa | grep "N" | wc -c
-
 
 
 **Conclusions:** 
