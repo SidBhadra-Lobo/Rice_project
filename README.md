@@ -43,7 +43,7 @@ Line Count, Character Count, “N” Count, %N of total Character Count
 	
 *N Count:*
 
-		less Oryza_glumaepatula.ALNU02000000.23.dna.chromosome.5.fa | grep "N" | wc -c
+		less Oryza_glumaepatula.ALNU02000000.23.dna.chromosome.*.fa | grep "N" | wc -c
 
 
 **Conclusions:** 
