@@ -8,7 +8,7 @@ This project aims to see the effects of [introgression](http://en.wikipedia.org/
 
 ###`Scripts:`
 
-`Preprocessing_and_Alignment_Pipeline.sh` is an ongoing attempt to run a pileline (closely following the pipeline made by Vince aka [vsbuffalo](https://github.com/RILAB/paap/blob/master/README.md)) that will do:
+[`Preprocessing_and_Alignment_Pipeline.sh`](Rice_project/slurm_scripts/Preprocessing_and_Alignment_Pipeline.sh) is an ongoing attempt to run a pileline (closely following the pipeline made by Vince aka [vsbuffalo](https://github.com/RILAB/paap/blob/master/README.md)) that will do:
 
  1). Sort reads using [NGSUtils -fastqtils](http://ngsutils.org/modules/fastqutils/).
  
@@ -26,7 +26,7 @@ This project aims to see the effects of [introgression](http://en.wikipedia.org/
 **Comparisons:**
 On a per chromosome basis between reference genomes on the following criteria in order to gauge their relative quality.
 
-Chromosome from [O.glum](ftp://ftp.ensemblgenomes.org/pub/plants/release-23/fasta/oryza_glumaepatula/dna/) and [O.sat](ftp://ftp.ensemblgenomes.org/pub/plants/release-23/fasta/oryza_sativa/dna/): 1-12
+Chromosomes 1-12 from [O.glum](http://plants.ensembl.org/Oryza_sativa/Info/Index) and [O.sat](http://plants.ensembl.org/Oryza_glumaepatula/Info/Index)
 
 Line Count, Character Count, “N” Count, %N of total Character Count
 
