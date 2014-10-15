@@ -23,3 +23,30 @@ This project aims to see the effects of [introgression](http://en.wikipedia.org/
 
 ## O. glumaepatula VS O. sativa Reference Genomes 
 
+**Comparisons:**
+On a per chromosome basis between reference genomes on the following criteria in order to gauge their relative quality.
+
+Chromosome Numbers: 1-14
+
+Line Count, Character Count, “N” Count, %N to total Character Count
+
+`Command Line Input:`
+
+Headerless Character Count:
+
+		less Oryza_glumaepatula.ALNU02000000.23.dna.chromosome.*.fa | sed 's/^>.*//g' | wc -c
+
+
+Headerless Line Count:
+
+		same as above, but wc -l instead.
+	
+N Count:
+
+		less Oryza_glumaepatula.ALNU02000000.23.dna.chromosome.5.fa | grep "N" | wc -c
+
+
+
+**Conclusions:** 
+Assembly and sequencing of O. glumaepatula is not the best quality reference genome. O. sativa is of good quality (2nd best ref gen out there). Since there are so many more N’s in O. glum, it will be a problem for alignments and SNP calling.
+
