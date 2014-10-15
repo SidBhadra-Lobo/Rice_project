@@ -47,5 +47,5 @@ Line Count, Character Count, “N” Count, %N of total Character Count
 
 
 **Conclusions:** 
-Assembly and sequencing of O. glumaepatula is not the best quality reference genome. O. sativa is of good quality (2nd best ref gen out there). Since there are so many more N’s in O. glum, it will be a problem for alignments and SNP calling.
+Assembly and sequencing of O. glumaepatula is not the best quality reference genome. O. sativa is of good quality (v7 is the 2nd best ref gen out there). Since there are so many more N’s in O. glum, it will be a problem for alignments and SNP calling.
 
