@@ -6,7 +6,7 @@ Domesticated(Crop): [Oryza sativa ssp. japonica](http://plants.ensembl.org/Oryza
 
 This project aims to see the effects of [introgression](http://en.wikipedia.org/wiki/Introgression) between Costa Rican populations of O. glumaepatula and O. sativa, using sequencing data from 8 O.glum genomes and 1 genome of an individual produced from an O.glum/O.sativa hybrid backcrossed with O.sativa.
 
-**Scripts:**
+###`Scripts:`
 
 `Preprocessing_and_Alignment_Pipeline.sh` is an ongoing attempt to run a pileline (closely following the pipeline made by Vince aka [vsbuffalo](https://github.com/RILAB/paap/blob/master/README.md)) that will do:
 
