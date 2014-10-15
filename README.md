@@ -8,7 +8,7 @@ This project aims to see the effects of [introgression](http://en.wikipedia.org/
 
 ###`Scripts:`
 
-[`Preprocessing_and_Alignment_Pipeline.sh`](Rice_project/slurm_scripts/Preprocessing_and_Alignment_Pipeline.sh) is an ongoing attempt to run a pileline (closely following the pipeline made by Vince aka [vsbuffalo](https://github.com/RILAB/paap/blob/master/README.md)) that will do:
+[`Preprocessing_and_Alignment_Pipeline.sh`](https://github.com/SidBhadra-Lobo/Rice_project/blob/master/slurm_scripts/Preprocessing_and_Alignment_Pipeline.sh) is an ongoing attempt to run a pileline (closely following the pipeline made by Vince aka [vsbuffalo](https://github.com/RILAB/paap/blob/master/README.md)) that will do:
 
  1). Sort reads using [NGSUtils -fastqtils](http://ngsutils.org/modules/fastqutils/).
  
