@@ -21,7 +21,7 @@ This project aims to see the effects of [introgression](http://en.wikipedia.org/
  5). Aligng with Align with [BWA-MEM](https://github.com/lh3/bwa).
 
 
-## O. glumaepatula VS O. sativa Reference Genomes 
+## Reference Genomes: O. glumaepatula VS O. sativa  
 
 **Comparisons:**
 On a per chromosome basis between reference genomes on the following criteria in order to gauge their relative quality.
