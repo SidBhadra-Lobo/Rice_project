@@ -26,7 +26,7 @@ This project aims to see the effects of [introgression](http://en.wikipedia.org/
 **Comparisons:**
 On a per chromosome basis between reference genomes on the following criteria in order to gauge their relative quality.
 
-Chromosome Numbers: 1-12
+Chromosome from [O.glum](ftp://ftp.ensemblgenomes.org/pub/plants/release-23/fasta/oryza_glumaepatula/dna/) and [O.sat](ftp://ftp.ensemblgenomes.org/pub/plants/release-23/fasta/oryza_sativa/dna/): 1-12
 
 Line Count, Character Count, “N” Count, %N of total Character Count
 
