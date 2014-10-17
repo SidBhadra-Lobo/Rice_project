@@ -69,7 +69,7 @@ cat $file3.sort.pair.merge | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - 
 
 	cat $file3.sort.pair.merge.seqq | /home/sbhadral/Projects/Rice_project/seqtk/seqtk trimfq > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq.trimmed
 
-			echo $file3.sort.pair.merge.trimmed
+			echo $file3.sort.pair.merge.seqq.trimmed
 			
 			cat $file3.sort.pair.merge.seqq.trimmed | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p raw-$(date +%F) > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.trimmed /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.trimmed ;
 
