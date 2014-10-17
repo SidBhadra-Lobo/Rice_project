@@ -63,15 +63,21 @@ echo $file3.sort.pair.merge
 ###### Run reads through seqqs, which records metrics on read quality, length, base composition.
 
 
-cat $file3.sort.pair.merge | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p raw-$(date +%F) >  /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq
+cat $file3.sort.pair.merge | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p raw-$(date +%F) >  /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/$file3.sort.pair.merge.seqq
 
-	echo $file3.sort.pair.merge.seqq
+	echo /$file3/$file3.sort.pair.merge.seqq
+	
+	#trying this out
+	##mv raw* /$file3/ ## didn't work
 
-	cat $file3.sort.pair.merge.seqq | /home/sbhadral/Projects/Rice_project/seqtk/seqtk trimfq > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq.trimmed
+## somethings going on here, but not enough battery power left to check it just yet. Saying /$file3/$file3.sort.pair.merge.seqq doesn't exist but the output is there...
+	cat /$file3/$file3.sort.pair.merge.seqq | /home/sbhadral/Projects/Rice_project/seqtk/seqtk - trimfq > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/$file3.sort.pair.merge.seqq.trimmed
 
-			echo $file3.sort.pair.merge.seqq.trimmed
+			echo /$file3/$file3.sort.pair.merge.seqq.trimmed
 			
-			cat $file3.sort.pair.merge.seqq.trimmed | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p raw-$(date +%F) > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.trimmed /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.trimmed ;
+			cat /$file3/$file3.sort.pair.merge.seqq.trimmed | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p trimmed-$(date +%F) > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/$file3.trimmed /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/$file3.trimmed ;
+
+
 
 done
 
