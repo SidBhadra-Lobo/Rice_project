@@ -1,7 +1,13 @@
+*.o
+*.a
+*.dSYM
+.*.swp
 *.gz
 *.fastq
 *.err
 *.out
+*.txt
+*.sort*
 /og*
 /bc*
 /ngsutils
@@ -10,4 +16,7 @@
 /pre_alignment
 /alignments
 /ref_gens
-
+/zlib-1.2.8
+/seqqs
+/seqtk
+/test_dir
