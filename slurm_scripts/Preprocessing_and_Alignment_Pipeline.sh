@@ -62,22 +62,31 @@ echo $file3.sort.pair.merge
 
 ###### Run reads through seqqs, which records metrics on read quality, length, base composition.
 
+mkdir $file3
 
-cat $file3.sort.pair.merge | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p raw-$(date +%F) >  /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/$file3.sort.pair.merge.seqq
+## somethings going on here, but not enough battery power left to check it just yet. Saying /$file3/$file3.sort.pair.merge.seqq doesn't exist but the output is there...
+cat $file3.sort.pair.merge | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p raw.$file3-$(date +%F) >  /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq
 
-	echo /$file3/$file3.sort.pair.merge.seqq
+	echo $file3.sort.pair.merge.seqq
 	
 	#trying this out
 	##mv raw* /$file3/ ## didn't work
 
-## somethings going on here, but not enough battery power left to check it just yet. Saying /$file3/$file3.sort.pair.merge.seqq doesn't exist but the output is there...
-	cat /$file3/$file3.sort.pair.merge.seqq | /home/sbhadral/Projects/Rice_project/seqtk/seqtk - trimfq > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/$file3.sort.pair.merge.seqq.trimmed
-
-			echo /$file3/$file3.sort.pair.merge.seqq.trimmed
+	cat $file3.sort.pair.merge.seqq | /home/sbhadral/Projects/Rice_project/seqtk/seqtk trimfq -q 0.01 - > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq.trimmed
+	
+mv raw.$file3-* /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/ 
 			
-			cat /$file3/$file3.sort.pair.merge.seqq.trimmed | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p trimmed-$(date +%F) > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/$file3.trimmed /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/$file3.trimmed ;
+			echo $file3.sort.pair.merge.seqq.trimmed
+			
+			cat $file3.sort.pair.merge.seqq.trimmed | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p trimmed.$file3-$(date +%F) 
+			
+				> /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq.trimmed.out
 
+					echo $file3.sort.pair.merge.seqq.trimmed.out		
 
+mv trimmed.$file3-* /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/
+
+mv *$file3*.sort* -f /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/ ;
 
 done
 
