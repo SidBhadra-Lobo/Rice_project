@@ -8,8 +8,10 @@ This project aims to see the effects of [introgression](http://en.wikipedia.org/
 
 ###`Scripts:`
 
-[`Preprocessing_and_Alignment_Pipeline.sh`](https://github.com/SidBhadra-Lobo/Rice_project/blob/master/slurm_scripts/Preprocessing_and_Alignment_Pipeline.sh) is an ongoing attempt to run a pileline (closely following the pipeline made by Vince aka [vsbuffalo](https://github.com/RILAB/paap/blob/master/README.md)) that will do:
+[`Preprocessing_and_Alignment_Pipeline.sh`](https://github.com/SidBhadra-Lobo/Rice_project/blob/master/slurm_scripts/Preprocessing_and_Alignment_Pipeline.sh) is an ongoing attempt to put together a pileline (closely following one outlined by Vince aka [vsbuffalo](https://github.com/RILAB/paap/blob/master/README.md)) that will do:
 
+`git clone` these repositories and compile each to run `Preprocessing_and_Alignment_Pipeline.sh`
+	
  1). Sort reads using [NGSUtils -fastqtils](http://ngsutils.org/modules/fastqutils/).
  
  2). Run reads through [seqqs](https://github.com/vsbuffalo/seqqs), which records metrics on read quality, length, base composition.
@@ -18,7 +20,7 @@ This project aims to see the effects of [introgression](http://en.wikipedia.org/
  
  4). Quality-based trimming with [seqtk's](https://github.com/lh3/seqtk) trimfq.
  
- 5). Aligng with Align with [BWA-MEM](https://github.com/lh3/bwa).
+ 5). Align with [BWA-MEM](https://github.com/lh3/bwa).
 
 
 ## Reference Genomes: O. glumaepatula VS O. sativa  
