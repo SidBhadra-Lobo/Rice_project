@@ -69,20 +69,26 @@ cat $file3.sort.pair.merge | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - 
 
 	echo $file3.sort.pair.merge.seqq
 	
-	#trying this out
-	##mv raw* /$file3/ ## didn't work
 
-	cat $file3.sort.pair.merge.seqq | /home/sbhadral/Projects/Rice_project/seqtk/seqtk trimfq -q 0.01 - > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq.trimmed
+###### Trim adapter sequences off of reads using scythe.
+
+ /home/sbhadral/Projects/Rice_project/scythe/scythe --quiet -a /home/sbhadral/Projects/Rice_project/scythe/illumina_adapters.fa $file3.sort.pair.merge.seqq > $file3.sort.pair.merge.seqq.scythe
+
+	echo $file3.sort.pair.merge.seqq.scythe
+
+###### Quality-based trimming with seqtk's trimfq.
+
+	cat $file3.sort.pair.merge.seqq.scythe | /home/sbhadral/Projects/Rice_project/seqtk/seqtk trimfq -q 0.01 - > /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq.scythe.trimmed
 	
 mv raw.$file3-* /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/ 
 			
-			echo $file3.sort.pair.merge.seqq.trimmed
+			echo $file3.sort.pair.merge.seqq.scythe.trimmed
 			
-			cat $file3.sort.pair.merge.seqq.trimmed | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p trimmed.$file3-$(date +%F) 
+			cat $file3.sort.pair.merge.seqq.scythe.trimmed | /home/sbhadral/Projects/Rice_project/seqqs/seqqs - -e -i -p trimmed.$file3-$(date +%F) 
 			
-				> /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq.trimmed.out
+				> /home/sbhadral/Projects/Rice_project/pre_alignment/$file3.sort.pair.merge.seqq.scythe.trimmed.out
 
-					echo $file3.sort.pair.merge.seqq.trimmed.out		
+		echo $file3.sort.pair.merge.seqq.scythe.trimmed.out		
 
 mv trimmed.$file3-* /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/
 
@@ -91,9 +97,7 @@ mv *$file3*.sort* -f /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/ 
 done
 
 
-###### Trim adapter sequences off of reads using scythe.
 
-###### Quality-based trimming with seqtk's trimfq.
 
 ###### Another around of seqqs, which records post pre-processing read quality metrics.
 
