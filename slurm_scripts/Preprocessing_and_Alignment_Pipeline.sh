@@ -5,7 +5,7 @@
 ########
 
 #SBATCH -D /home/sbhadral/Projects/Rice_project/rice_fastqs/
-#SBATCH -J PAAP_bc1
+#SBATCH -J PAAP_og175
 #SBATCH -p serial
 #SBATCH -o /home/sbhadral/Projects/Rice_project/outs/%j.out
 #SBATCH -e /home/sbhadral/Projects/Rice_project/errors/%j.err
@@ -17,11 +17,9 @@ set -e
 set -u
 #SBATCH --array=1
 
-###### command line input. for file in $(ls *.gz); do sbatch /home/sbhadral/Projects/scripts/Preprocessing_and_Alignment_Pipeline.sh "$file" ; done
-
 module load bwa/0.7.5a
 
-FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/rice_fastqs/backcross_test.txt )
+FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/rice_fastqs/single_og175_test.txt )
 
 ## Before alignment, index reference. bwa index -p O_sativa Oryza_sativa.IRGSP-1.0.23.dna.genome.fa.gz
 
@@ -40,18 +38,16 @@ echo $file1
 echo $file2
 echo $file3
 
-cd /home/sbhadral/Projects/Rice_project/pre_alignment/
+# make the directories to collect all files associated with each run.
 
 mkdir $file3
-
-cd /home/sbhadral/Projects/Rice_project/rice_fastqs/
 
 ###### First, unzip .gz files, then sort reads using NGSUtils. 
 ###### Sort each run, while directing temp files to a staging directory, then save as $file[1-2].sort
 
-	/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils sort -T /home/sbhadral/Projects/Rice_project/pre_alignment/ <(gunzip -dkcf $file1)  > $file1.sort 
+	/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils sort -T /home/sbhadral/Projects/Rice_project/pre_alignment/ <(gunzip -dkc $file1) - > $file1.sort 
 
-	/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils sort -T /home/sbhadral/Projects/Rice_project/pre_alignment/ <(gunzip -dkcf $file2)  > $file2.sort
+	/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils sort -T /home/sbhadral/Projects/Rice_project/pre_alignment/ <(gunzip -dkc $file2) - > $file2.sort
 
 	#### Trying to streamline it.
 	#/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils sort -T /home/sbhadral/Projects/Rice_project/pre_alignment <(gunzip -dkcf $file1) <(gunzip -dkcf $file2) |
@@ -106,7 +102,7 @@ cd /home/sbhadral/Projects/Rice_project/rice_fastqs/
 
 		cat $file3.sort.pair.merge.seqq.scythe | /home/sbhadral/Projects/Rice_project/seqtk/seqtk trimfq -q 0.01 - > $file3.sort.pair.merge.seqq.scythe.trimmed
 	
-			mv raw.$file3-* /home/sbhadral/Projects/Rice_project/$file3/ 
+			mv raw.$file3-* /home/sbhadral/Projects/Rice_project/rice_fastqs/$file3/ 
 			
 				echo $file3.sort.pair.merge.seqq.scythe.trimmed
 
@@ -135,7 +131,7 @@ cd /home/sbhadral/Projects/Rice_project/rice_fastqs/
 		 samtools view -Sbhu - > /home/sbhadral/Projects/Rice_project/alignments/check.$file3.bam
 
 
-mv *$file3*.sort* -f /home/sbhadral/Projects/Rice_project/pre_alignment/$file3/ ;
+mv *$file3*.sort* -f /home/sbhadral/Projects/Rice_project/rice_fastqs/$file3/ ;
 
 done
 
