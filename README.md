@@ -4,7 +4,8 @@ Wild: [Oryza glumaepatula](http://plants.ensembl.org/Oryza_sativa/Info/Index)
 
 Domesticated(Crop): [Oryza sativa ssp. japonica](http://plants.ensembl.org/Oryza_glumaepatula/Info/Index)
 
-This project aims to see the effects of [introgression](http://en.wikipedia.org/wiki/Introgression) between Costa Rican populations of O. glumaepatula and O. sativa, using sequencing data from 8 O.glum genomes and 1 genome of an individual produced from an O.glum/O.sativa hybrid backcrossed with O.sativa.
+This project aims to see the effects of [introgression](http://en.wikipedia.org/wiki/Introgression) between Costa Rican populations of O. glumaepatula and O. sativa, using sequencing data from 8 O.glum genomes and 1 genome of an individual produced from an O.glum/O.sativa hybrid backcrossed with O. sativa. O. glum genomes 273, 275,276,278 are sympatric and 175,176,177,179 are allopatric. Sympatric means that O. glum is sympatric with O. sativa and bc1 is the back/cross of O.glumaepatula-O.sativa hybrid with O.sativa again.
+
 
 ###`Scripts:`
 
