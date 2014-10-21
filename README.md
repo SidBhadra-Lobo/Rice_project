@@ -52,7 +52,8 @@ Line Count, Character Count, “N” Count, %N of total Character Count
 **Conclusions:** 
 Assembly and sequencing of O. glumaepatula is not the best quality reference genome. O. sativa is of good quality (v7 is the 2nd best ref gen out there). Since there are so many more N’s in O. glum, it will be a problem for alignments and SNP calling.
 
-Domestication Loci for O. sativa ssp. japonica [Huang et al (2012)](http://www.nature.com/nature/journal/v490/n7421/full/nature11532.html)
+## Domestication Loci for O. sativa ssp. japonica ([Huang et al (2012)](http://www.nature.com/nature/journal/v490/n7421/full/nature11532.html))
+
 ![Supplementary Table 11_1](https://github.com/SidBhadra-Lobo/Rice_project/blob/master/manuscript/japonica_domestication_loci_table_11_2.png "Table part 1")
 
 ![Supplementary Table 11_2](https://github.com/SidBhadra-Lobo/Rice_project/blob/master/manuscript/japonica_domestication_loci_table_11_1.png "Table part 2")
