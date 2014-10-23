@@ -31,14 +31,16 @@ echo $file2
 
 cat $file1 | gzip -kc - > $file1.cat 
 
-cat $file2 | gzip -kc - > $file2.cat 
+cat $file2 | gzip -kc - > $file2.cat ;
 
-# EJF-001A_index1_ATCACG_L001_R1_001.fastq og273
-# EJF-001B_index2_CGATGT_L001_R1_001.fastq og275
-# EJF-001C_index3_TTAGGC_L001_R1_001.fastq og276
-# EJF_002A_TGACCA_L007_R1_001.fastq	og278
-# EJF_002B_ACAGTG_L007_R1_001.fastq og175
-# EJF_002C_GCCAAT_L007_R1_001.fastq og176
-# EJF_003A_CAGATC_L008_R1_001.fastq og177
-# EJF_003B_ACTTGA_L008_R1_001.fastq og179
-# EJF_003C_GATCAG_L008_R1_001.fastq bc1
+done
+
+# EJF-001A_index1_ATCACG_L001_R1_001.fastq	 og273
+# EJF-001B_index2_CGATGT_L001_R1_001.fastq	 og275
+# EJF-001C_index3_TTAGGC_L001_R1_001.fastq	 og276
+# EJF_002A_TGACCA_L007_R1_001.fastq		og278
+# EJF_002B_ACAGTG_L007_R1_001.fastq 	og175
+# EJF_002C_GCCAAT_L007_R1_001.fastq 	og176
+# EJF_003A_CAGATC_L008_R1_001.fastq 	og177
+# EJF_003B_ACTTGA_L008_R1_001.fastq 	og179
+# EJF_003C_GATCAG_L008_R1_001.fastq 	bc1
