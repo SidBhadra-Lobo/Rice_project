@@ -25,13 +25,15 @@ do
 
 file1=( echo $file | sed -e 's/R1\_001.fastq/R1*.fastq/g' )
 file2=( echo $file1 |  sed -e 's/R1\*.fastq/R2*.fastq/g' )
+file3=(echo $file | sed -e sed -e 's/_R1_\001.fastq//g' )
 
 echo $file1
 echo $file2
+echo $file3
 
-cat $file1 | gzip -kc - > $file1.cat 
+cat $file1 | gzip -kc - > $file3.R1.cat 
 
-cat $file2 | gzip -kc - > $file2.cat ;
+cat $file2 | gzip -kc - > $file3.R2.cat ;
 
 done
 
