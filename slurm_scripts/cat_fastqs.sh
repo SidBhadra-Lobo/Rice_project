@@ -31,9 +31,9 @@ echo $file1
 echo $file2
 echo $file3
 
-ls $file1 | cat - | gzip -kc - > $file3.R1.cat 
+less $file1 | cat | gzip -kc > $file3.R1.cat 
 
-ls $file2 | cat - | gzip -kc - > $file3.R2.cat ;
+less $file2 | cat | gzip -kc > $file3.R2.cat ;
 
 done
 
