@@ -49,8 +49,8 @@ echo $file3
 	#### Trying to streamline it.
 	#/home/sbhadral/Projects/Rice_project/ngsutils/bin/fastqutils sort -T /home/sbhadral/Projects/Rice_project/pre_alignment <(gunzip -dkcf $file1) <(gunzip -dkcf $file2) |
 
-		#echo $file1.sort
-		#echo $file2.sort
+		echo $file1.sort
+		echo $file2.sort
 
 
 ###### Find properly paired reads (when fragments are filtered separately).
