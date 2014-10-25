@@ -4,7 +4,7 @@
 ########
 
 #SBATCH -D /home/sbhadral/Projects/Rice_project/fixed_fastqs/
-#SBATCH -J fastq_fix
+#SBATCH -J fastq_1a-2b
 #SBATCH -p serial
 #SBATCH -o /home/sbhadral/Projects/Rice_project/outs/%A_%a.out
 #SBATCH -e /home/sbhadral/Projects/Rice_project/errors/%A_%a.err
@@ -14,9 +14,9 @@
 #SBATCH --mail-user=sbhadralobo@ucdavis.edu
 set -e
 set -u
-##SBATCH --array=1-9
+#SBATCH --array=1-5
 
-#FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/fixed_fastqs/cat_list.txt )
+FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/fixed_fastqs/cat_list_1a-2b.txt )
 
 
 for file in "FILE";
@@ -42,6 +42,8 @@ done
 # EJF-001C_index3_TTAGGC_L001_R1_001.fastq	 og276
 # EJF_002A_TGACCA_L007_R1_001.fastq		og278
 # EJF_002B_ACAGTG_L007_R1_001.fastq 	og175
+
+
 # EJF_002C_GCCAAT_L007_R1_001.fastq 	og176
 # EJF_003A_CAGATC_L008_R1_001.fastq 	og177
 # EJF_003B_ACTTGA_L008_R1_001.fastq 	og179
