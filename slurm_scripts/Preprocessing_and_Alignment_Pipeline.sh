@@ -5,7 +5,7 @@
 ########
 
 #SBATCH -D /home/sbhadral/Projects/Rice_project/rice_fastqs/
-#SBATCH -J PAAP_og273
+#SBATCH -J PAAP_four
 #SBATCH -p serial
 #SBATCH -o /home/sbhadral/Projects/Rice_project/outs/%A_%a.out
 #SBATCH -e /home/sbhadral/Projects/Rice_project/errors/%A_%a.err
@@ -15,11 +15,11 @@
 #SBATCH --mail-user=sbhadralobo@ucdavis.edu
 set -e
 set -u
-#SBATCH --array=1
+#SBATCH --array=1-4
 
 module load bwa/0.7.5a
 
-FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/rice_fastqs/my_compressed_files.txt )
+FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/rice_fastqs/last_four_lines.txt )
 
 ## Before alignment, index reference. bwa index -p O_sativa Oryza_sativa.IRGSP-1.0.23.dna.genome.fa.gz
 

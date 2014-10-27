@@ -4,7 +4,7 @@
 ########
 
 #SBATCH -D /home/sbhadral/Projects/Rice_project/fixed_fastqs/
-#SBATCH -J fastq_1a-2b
+#SBATCH -J fastq_2c-3c
 #SBATCH -p serial
 #SBATCH -o /home/sbhadral/Projects/Rice_project/outs/%A_%a.out
 #SBATCH -e /home/sbhadral/Projects/Rice_project/errors/%A_%a.err
@@ -14,12 +14,12 @@
 #SBATCH --mail-user=sbhadralobo@ucdavis.edu
 set -e
 set -u
-#SBATCH --array=1-5
+#SBATCH --array=1-4
 
-FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/fixed_fastqs/cat_list_1a-2b.txt )
+FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/fixed_fastqs/cat_list_2c-3c.txt )
 
 
-for file in "FILE";
+for file in "$FILE";
 
 do 
 
