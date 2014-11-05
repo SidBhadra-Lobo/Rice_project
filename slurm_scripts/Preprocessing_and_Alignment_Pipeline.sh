@@ -4,8 +4,8 @@
 ###### Cleaning up reads for alignment.
 ########
 
-#SBATCH -D /home/sbhadral/Projects/Rice_project/rice_fastqs/
-#SBATCH -J PAAP_four
+#SBATCH -D /home/sbhadral/Projects/Rice_project/reseq_japonica/
+#SBATCH -J PAAP_reseqs
 #SBATCH -p serial
 #SBATCH -o /home/sbhadral/Projects/Rice_project/outs/%A_%a.out
 #SBATCH -e /home/sbhadral/Projects/Rice_project/errors/%A_%a.err
@@ -15,11 +15,11 @@
 #SBATCH --mail-user=sbhadralobo@ucdavis.edu
 set -e
 set -u
-#SBATCH --array=1-4
+#SBATCH --array=1-35
 
 module load bwa/0.7.5a
 
-FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/rice_fastqs/last_four_lines.txt )
+FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/reseq_japonica/reseq_fastqs.txt )
 
 ## Before alignment, index reference. bwa index -p O_sativa Oryza_sativa.IRGSP-1.0.23.dna.genome.fa.gz
 
@@ -30,8 +30,8 @@ for file1 in "$FILE";
 do
 
 ## Replace file extensions accordingly for ease in processing.
-file2=$(echo $file1 | sed -e 's/-R1\.fastq.gz/-R2.fastq.gz/g')
-file3=$(echo $file1 | sed -e 's/-R1\.fastq.gz//g')
+file2=$(echo $file1 | sed -e 's/_1\.fastq.gz/_2.fastq.gz/g')
+file3=$(echo $file1 | sed -e 's/_1\.fastq.gz//g')
 
 # Check with echos
 echo $file1
@@ -115,11 +115,12 @@ echo $file3
 
 	# make the directories to collect all files associated with each run.
 
-	mkdir $file3
+## not necessary for resequenced, the directories are already made.
+	#mkdir $file3
 
-		mv raw.$file3-* /home/sbhadral/Projects/Rice_project/rice_fastqs/$file3/ 
+		mv raw.$file3-* /home/sbhadral/Projects/Rice_project/reseq_japonica/$file3/ 
 
-		mv trimmed.$file3-* /home/sbhadral/Projects/Rice_project/rice_fastqs/$file3/
+		mv trimmed.$file3-* /home/sbhadral/Projects/Rice_project/reseq_japonica/$file3/
 
 
 	#### Trying to streamline it.
@@ -137,7 +138,7 @@ echo $file3
 		 samtools view -Sbhu - > /home/sbhadral/Projects/Rice_project/alignments/check.$file3.bam
 
 
-mv *$file3*sort*  /home/sbhadral/Projects/Rice_project/rice_fastqs/$file3/ ;
+mv *$file3*sort*  /home/sbhadral/Projects/Rice_project/reseq_japonica/$file3/ ;
 
 
 done
