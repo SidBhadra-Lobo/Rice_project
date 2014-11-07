@@ -1,4 +1,4 @@
-#!bin/bash -l
+#!/bin/bash -l
 
 #### Showing flagstats of bams using samtools.
 
@@ -17,4 +17,4 @@ set -u
 
 FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p bam_list.txt )
 
-samtools flagstat "$FILE" | sed -n -e 1p -e 3p  > flagstats.txt
+samtools flagstat "$FILE" | sed -n -e 1p -e 3p  > flagstats."$FILE".txt
