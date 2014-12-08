@@ -15,4 +15,4 @@ set -e
 set -u
 
 
-bash scripts/ANGSD_2DSFS.sh scripts/2dsfs_ogs.conf
+bash scripts/ANGSD_2DSFS_sid.sh scripts/2dsfs_ogs.conf

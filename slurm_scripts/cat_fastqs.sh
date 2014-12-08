@@ -14,9 +14,9 @@
 #SBATCH --mail-user=sbhadralobo@ucdavis.edu
 set -e
 set -u
-#SBATCH --array=1-4
+#SBATCH --array=1
 
-FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p /home/sbhadral/Projects/Rice_project/fixed_fastqs/cat_list_2c-3c.txt )
+FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p cat_list_2b.txt )
 
 
 for file in "$FILE";

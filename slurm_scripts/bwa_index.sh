@@ -1,9 +1,9 @@
 #!/bin/bash -l
 
-#### 2DSFS from Arun's angsd-wrapper
+#### Use BWA to index fasta files.
 ########
 
-#SBATCH -D /home/sbhadral/Projects/Rice_project/alignments/og_bams
+#SBATCH -D /home/sbhadral/Projects/Rice_project/ref_gens/
 #SBATCH -J index
 #SBATCH -p serial
 #SBATCH -o /home/sbhadral/Projects/Rice_project/outs/%A_%a.out
@@ -14,10 +14,10 @@
 #SBATCH --mail-user=sbhadralobo@ucdavis.edu
 set -e
 set -u
-#SBATCH --array=1-9
+#SBATCH --array=1
 
 module load bwa/0.7.5a
 
-FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p og_bams_list.txt )
+FILE=$( sed -n "$SLURM_ARRAY_TASK_ID"p O_indica_index_list.txt )
 
-bwa index "$FILE"
+bwa index -p O_indica "$FILE"

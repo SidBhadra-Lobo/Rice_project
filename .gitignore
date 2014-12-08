@@ -25,3 +25,5 @@ TSW*
 /test_dir
 /fixed_fastqs
 /reseq_japonica
+/angsd-wrapper
+/reseq_indica

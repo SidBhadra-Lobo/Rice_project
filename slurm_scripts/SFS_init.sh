@@ -15,4 +15,4 @@ set -e
 set -u
 
 
-bash scripts/ANGSD_SFS.sh scripts/sfs_ogs.conf
+bash scripts/ANGSD_SFS_sid.sh scripts/sfs_ogs.conf
